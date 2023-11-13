@@ -2,8 +2,45 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .section-min-height {
+    min-height: calc(100vh - 68px);
+  }
+}
 
-/* custome css class */
-.radial-blue {
-  background: radial-gradient(lightyellow, skyblue);
+#checkbox {
+  display: none;
+}
+
+.toggle {
+  position: relative;
+  width: 40px;
+  cursor: pointer;
+  margin: auto;
+  display: block;
+  height: calc(3px * 3 + 11px * 2);
+}
+
+.bar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 4px;
+  border-radius: calc(4px / 2);
+  background: #ffffff;
+  color: inherit;
+  opacity: 1;
+  transition: none 0.35s cubic-bezier(.5,-0.35,.35,1.5) 0s;
+}
+
+.bar--top {
+  bottom: calc(50% + 11px + 4px/ 2);
+}
+
+.bar--middle {
+  top: calc(50% - 4px/ 2);
+}
+
+.bar--bottom {
+  top: calc(50% + 11px + 4px/ 2);
 }
